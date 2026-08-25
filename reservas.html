@@ -57,19 +57,16 @@
         <button type="submit" class="btn-primary" style="width: 100%;">Confirmar Reserva</button>
       </form>
 
-   
-      <div id="mensaje-exito" class="alert-success" style="display: none;">
+
+      <div id="mensaje-exito" class="alert-success" style="display: none; text-align: center;">
         <h3>¡Reserva Confirmada! 🎉</h3>
         <p>Tu mesa ha sido reservada con éxito. Te esperamos en <strong>La Pampa & Carbón</strong>.</p>
-        <div class="reserva-detalles">
-          <p><strong>Personas:</strong> <span id="res-personas"></span></p>
-          <p><strong>Fecha:</strong> <span id="res-fecha"></span></p>
-          <p><strong>Hora:</strong> <span id="res-hora"></span></p>
-          <p><strong>Zona:</strong> <span id="res-zona"></span></p>
+        
+     
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
+          <button onclick="location.reload()" class="btn-primary" style="flex: 1;">Hacer otra reserva</button>
+          <a href="index.html" class="btn-primary" style="flex: 1; text-align: center; text-decoration: none;">Volver al Inicio</a>
         </div>
-        <button onclick="location.reload()" class="btn-primary" style="margin-top: 15px;">Hacer otra reserva</button>
-         <button onclick="location.reload()" class="btn-primary" style="margin-top: 15px;"> <li><a href="index.html" class="nav-link">Inicio</a></li></button>
-         
       </div>
 
     </section>
@@ -85,23 +82,14 @@
     document.getElementById('reserva-form').addEventListener('submit', function(e) {
       e.preventDefault(); 
 
-     
-      const personas = document.getElementById('personas').value;
-      const fecha = document.getElementById('fecha').value;
-      const hora = document.getElementById('hora').value;
-      const zona = document.getElementById('zona').value;
-
-      // Mostrar los valores en el cuadro de éxito
-      document.getElementById('res-personas').textContent = personas;
-      document.getElementById('res-fecha').textContent = fecha;
-      document.getElementById('res-hora').textContent = hora;
-      document.getElementById('res-zona').textContent = zona;
-
-      // Ocultar el formulario y mostrar la confirmación
+      // Ocultar el formulario y mostrar solo la confirmación
       document.getElementById('reserva-form').style.display = 'none';
       document.getElementById('mensaje-exito').style.display = 'block';
     });
   </script>
+
+</body>
+</html>
 
 </body>
 </html>
