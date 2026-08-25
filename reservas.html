@@ -11,50 +11,65 @@
   <header class="header">
     <div class="container navbar">
       <a href="index.html" class="logo">La Pampa & Carbón</a>
-     <nav>
-  <ul class="nav-menu">
-    <li><a href="index.html" class="nav-link">Inicio</a></li>
-    <li><a href="menu.html" class="nav-link">Menú</a></li>
-    <li><a href="reservas.html" class="nav-link">Reservas</a></li>
-    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
-    <li><a href="login.html" class="nav-link">Iniciar Sesión</a></li>
-  </ul>
-</nav>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="menu.html" class="nav-link">Menú</a></li>
+          <li><a href="reservas.html" class="nav-link active">Reservas</a></li>
+          <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+          <li><a href="login.html" class="nav-link">Iniciar Sesion</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="form-container">
       <h2>Reserva tu Mesa</h2>
-      <form action="index.html" method="get">
-        
+      
+      <!-- Formulario de reserva -->
+      <form id="reserva-form">
         <div class="form-group">
           <label for="personas">Número de Personas:</label>
-          <input type="number" id="personas" name="personas" class="form-control" min="1" max="20" required>
+          <input type="number" id="personas" class="form-control" min="1" max="20" required>
         </div>
 
         <div class="form-group">
           <label for="fecha">Fecha:</label>
-          <input type="date" id="fecha" name="fecha" class="form-control" required>
+          <input type="date" id="fecha" class="form-control" required>
         </div>
 
         <div class="form-group">
           <label for="hora">Hora:</label>
-          <input type="time" id="hora" name="hora" class="form-control" required>
+          <input type="time" id="hora" class="form-control" required>
         </div>
 
         <div class="form-group">
           <label for="zona">Zona del Restaurante:</label>
-          <select id="zona" name="zona" class="form-select form-control" required>
+          <select id="zona" class="form-select form-control" required>
             <option value="">Selecciona una zona...</option>
-            <option value="terraza">Terraza al aire libre</option>
-            <option value="interior">Comedor Principal</option>
-            <option value="vip">Zona VIP</option>
+            <option value="Terraza al aire libre">Terraza al aire libre</option>
+            <option value="Comedor Principal">Comedor Principal</option>
+            <option value="Zona VIP">Zona VIP</option>
           </select>
         </div>
 
         <button type="submit" class="btn-primary" style="width: 100%;">Confirmar Reserva</button>
       </form>
+
+      <!-- Mensaje de confirmación (oculto por defecto) -->
+      <div id="mensaje-exito" class="alert-success" style="display: none;">
+        <h3>¡Reserva Confirmada! 🎉</h3>
+        <p>Tu mesa ha sido reservada con éxito. Te esperamos en <strong>La Pampa & Carbón</strong>.</p>
+        <div class="reserva-detalles">
+          <p><strong>Personas:</strong> <span id="res-personas"></span></p>
+          <p><strong>Fecha:</strong> <span id="res-fecha"></span></p>
+          <p><strong>Hora:</strong> <span id="res-hora"></span></p>
+          <p><strong>Zona:</strong> <span id="res-zona"></span></p>
+        </div>
+        <button onclick="location.reload()" class="btn-primary" style="margin-top: 15px;">Hacer otra reserva</button>
+      </div>
+
     </section>
   </main>
 
@@ -63,6 +78,29 @@
       <p>&copy; 2026 Restaurante La Pampa & Carbón. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <!-- Script para procesar el envío -->
+  <script>
+    document.getElementById('reserva-form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita que la página se recargue
+
+      // Obtener los valores ingresados
+      const personas = document.getElementById('personas').value;
+      const fecha = document.getElementById('fecha').value;
+      const hora = document.getElementById('hora').value;
+      const zona = document.getElementById('zona').value;
+
+      // Mostrar los valores en el cuadro de éxito
+      document.getElementById('res-personas').textContent = personas;
+      document.getElementById('res-fecha').textContent = fecha;
+      document.getElementById('res-hora').textContent = hora;
+      document.getElementById('res-zona').textContent = zona;
+
+      // Ocultar el formulario y mostrar la confirmación
+      document.getElementById('reserva-form').style.display = 'none';
+      document.getElementById('mensaje-exito').style.display = 'block';
+    });
+  </script>
 
 </body>
 </html>
