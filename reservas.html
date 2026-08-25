@@ -57,7 +57,7 @@
         <button type="submit" class="btn-primary" style="width: 100%;">Confirmar Reserva</button>
       </form>
 
-      <!-- Mensaje de confirmación (oculto por defecto) -->
+   
       <div id="mensaje-exito" class="alert-success" style="display: none;">
         <h3>¡Reserva Confirmada! 🎉</h3>
         <p>Tu mesa ha sido reservada con éxito. Te esperamos en <strong>La Pampa & Carbón</strong>.</p>
@@ -68,6 +68,7 @@
           <p><strong>Zona:</strong> <span id="res-zona"></span></p>
         </div>
         <button onclick="location.reload()" class="btn-primary" style="margin-top: 15px;">Hacer otra reserva</button>
+         <button onclick="location.reload()" class="btn-primary" style="margin-top: 15px;">Inicio </button>
       </div>
 
     </section>
@@ -79,12 +80,11 @@
     </div>
   </footer>
 
-  <!-- Script para procesar el envío -->
   <script>
     document.getElementById('reserva-form').addEventListener('submit', function(e) {
-      e.preventDefault(); // Evita que la página se recargue
+      e.preventDefault(); 
 
-      // Obtener los valores ingresados
+     
       const personas = document.getElementById('personas').value;
       const fecha = document.getElementById('fecha').value;
       const hora = document.getElementById('hora').value;
