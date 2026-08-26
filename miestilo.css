@@ -301,3 +301,8 @@ main {
   gap: 2rem;
   padding: 1rem 0;
 }
+.form-control:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 5px rgba(192, 57, 43, 0.4);
+  outline: none;
+}
