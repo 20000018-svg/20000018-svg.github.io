@@ -3,51 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Pampa & Carbón- Inicio</title>
+  <title>La Pampa & Carbón - Inicio</title>
+  
+  <!-- Tipografía elegante desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Iconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Estilos CSS -->
   <link rel="stylesheet" href="miestilo.css">
 </head>
 <body>
 
+  <!-- ENCABEZADO Y NAVEGACIÓN -->
   <header class="header">
     <div class="container navbar">
-      <a href="index.html" class="logo">La Pampa & Carbón</a>
-    <nav>
-  <ul class="nav-menu">
-    <li><a href="index.html" class="nav-link">Inicio</a></li>
-    <li><a href="menu.html" class="nav-link">Menú</a></li>
-    <li><a href="reservas.html" class="nav-link">Reservas</a></li>
-    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
-    <li><a href="login.html" class="nav-link">Iniciar Sesión</a></li>
-  </ul>
-</nav>
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-fire-flame-curved"></i> La Pampa & Carbón
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Inicio</a></li>
+          <li><a href="menu.html" class="nav-link">Menú</a></li>
+          <li><a href="reservas.html" class="nav-link">Reservas</a></li>
+          <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+          <li><a href="login.html" class="nav-link btn-login"><i class="fa-regular fa-user"></i> Iniciar Sesión</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <main>
+  
     <section class="hero">
-      <div class="container">
-        <h1>Una Experiencia Gastronomica unica</h1>
-        <p>Ingredientes frescos, recetas tradicionales y un ambiente inolvidable.</p>
-        <a href="reservas.html" class="btn-primary">Reserva tu Mesa</a>
+      <div class="container hero-content">
+        <h1>Una Experiencia Gastronómica Única</h1>
+        <p>Ingredientes frescos, recetas tradicionales y un ambiente inolvidable a las brasas.</p>
+        <a href="reservas.html" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Reserva tu Mesa</a>
       </div>
     </section>
 
+
     <div class="container layout-with-aside">
       <section class="content-main">
-        <h2> En La Pampa & Carbón unimos el toque gourmet con el calor de casa. Cada mañana, nuestros chefs eligen los mejores ingredientes locales para llevar a tu mesa un platillo fresco, único y de calidad excepcional.</h2>
+        <h2>Tradición, Pasión y Sabor Gourmet</h2>
+        <p class="lead-text">
+          En <strong>La Pampa & Carbón</strong> unimos el toque gourmet con el calor de casa. Cada mañana, nuestros chefs eligen los mejores cortes e ingredientes locales para llevar a tu mesa un platillo fresco, único y de calidad excepcional.
+        </p>
       </section>
 
       <aside class="aside-info">
-        <h3>Horarios de Atencion</h3>
-        <p><strong>Lun - Vie:</strong> 12:00 PM - 10:00 PM</p>
-        <p><strong>Sab - Dom:</strong> 11:00 AM - 11:00 PM</p>
+        <h3><i class="fa-regular fa-clock"></i> Horarios de Atención</h3>
+        <ul class="schedule-list">
+          <li>
+            <span><strong>Lunes a Viernes:</strong></span>
+            <span>12:00 PM - 10:00 PM</span>
+          </li>
+          <li>
+            <span><strong>Sábados y Domingos:</strong></span>
+            <span>11:00 AM - 11:00 PM</span>
+          </li>
+        </ul>
       </aside>
     </div>
-  </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Restaurante La Pampa & Carbón. Todos los derechos reservados.</p>
+    <!-- SECCIÓN DE ESPECIALIDADES / TARJETAS (NUEVA MEJORA) -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Nuestras Especialidades</h2>
+        <div class="cards-grid">
+          
+          <article class="card">
+            <div class="card-icon"><i class="fa-solid fa-drumstick-bite"></i></div>
+            <h3>Cortes Seleccionados</h3>
+            <p>Carne madurada con técnica tradicional para garantizar máxima jugosidad y textura.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon"><i class="fa-solid fa-wine-glass"></i></div>
+            <h3>Cava & Maridaje</h3>
+            <p>Una selección fina de vinos para complementar a la perfección cada corte de carne.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+      </div>
     </div>
   </footer>
 
